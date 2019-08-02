@@ -48,9 +48,9 @@ database.ref().on("child_added", function(childSnapshot) {
 
     // Create the new row
     var newRow = $("<tr>").append(
+        $("<td>").text(dateAcquired),
         $("<td>").text(playerName),
         $("<td>").text(itemName),
-        $("<td>").text(dateAcquired),
         $("<td>").text(isMain)
     );
     
