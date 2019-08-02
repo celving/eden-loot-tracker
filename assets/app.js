@@ -17,16 +17,17 @@ var database = firebase.database();
 $("#add-item").on("click", function(event) {
 
     event.preventDefault();
-
+    
+    var dateAcquired = $("#date-input").val().trim();
     var playerName = $("#name-input option:selected").text();
     var itemName = $("#item-input option:selected").text();
-    var dateAcquired = $("#date-input").val().trim();
     var isMain = $("#main-input option:selected").text();
 
     var newEntry = {
+      
+        date: dateAcquired,
         name: playerName,
         item: itemName,
-        date: dateAcquired,
         main: isMain
     };
 
