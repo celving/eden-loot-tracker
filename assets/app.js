@@ -14,17 +14,19 @@ var firebaseConfig = {
 
 var database = firebase.database();
 
-$("#add-item").on("click", function() {
+$("#add-item").on("click", function(event) {
 
     event.preventDefault();
 
     var playerName = $("#name-input option:selected").text();
     var itemName = $("#item-input option:selected").text();
+    var dateAcquired = $("#date-input").val().trim();
     var isMain = $("#main-input option:selected").text();
 
     var newEntry = {
         name: playerName,
         item: itemName,
+        date: dateAcquired,
         main: isMain
     };
 
@@ -32,6 +34,7 @@ $("#add-item").on("click", function() {
 
     console.log(newEntry.name);
     console.log(newEntry.item);
+    console.log(newEntry.date);
     console.log(newEntry.main);
 });
 
@@ -40,13 +43,15 @@ database.ref().on("child_added", function(childSnapshot) {
 
     var playerName = childSnapshot.val().name;
     var itemName = childSnapshot.val().item;
+    var dateAcquired = childSnapshot.val().date;
     var isMain = childSnapshot.val().main;
 
     // Create the new row
     var newRow = $("<tr>").append(
         $("<td>").text(playerName),
         $("<td>").text(itemName),
-        $("<td>").text(isMain),
+        $("<td>").text(dateAcquired),
+        $("<td>").text(isMain)
     );
     
       // Append the new row to the table

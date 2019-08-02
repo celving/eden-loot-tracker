@@ -17,6 +17,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="assets/style.css">
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
 
@@ -28,14 +29,14 @@
     <div class="container">
 
         <!-- Jumbotron -->
-        <div class="jumbotron bg-secondary">
+        <div class="jumbotron text-white">
             <h1 class="text-center text-white">Eden's Gate Loot Tracker</h1>
         </div>
 
         <div class="row">
                 <div class="col-md-12">
                     <div class="card mb-4">
-                        <div class="card-header">Add Loot Here</div>
+                        <div class="card-header text-white">Add Loot Here</div>
                         <div class="card-body">
     
                             <!-- Entry Form -->
@@ -73,13 +74,17 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label for="date-input">Date Acquired</label>
+                                    <input class="form-control" id="date-input" type="text">
+                                </div>
+                                <div class="form-group">
                                     <label for="bis-input">Is this item for the player's main job?</label>
                                     <select class="form-control" id="main-input">
                                         <option>Yes</option>
                                         <option>No</option>
                                     </select>
                                 </div>
-                                <button class="btn btn-primary float-right btn-secondary" id="add-item">Submit</button>
+                                <button class="btn btn-primary float-right text-white" id="add-item">Submit</button>
                             </form>
     
                         </div>
@@ -91,15 +96,15 @@
 
             <div class="col-md-12">
 
-                <!-- Current Employees-->
                 <div class="card mb-4">
-                    <div class="card-header">Loot Received</div>
+                    <div class="card-header text-white">Loot Received</div>
                     <div class="card-body">
                         <table class="table table-sm table-hover" id="loot-table">
                             <thead>
                                 <tr>
                                     <th scope="col">Player</th>
                                     <th scope="col">Item</th>
+                                    <th scope="col">Date Acquired</th>
                                     <th scope="col">Main?</th>
                                 </tr>
                             </thead>

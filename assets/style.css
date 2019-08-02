@@ -1,0 +1,16 @@
+body{
+    background-image: url("ronka.jpg");
+}
+.jumbotron{
+    background-color: #A46E38;
+}
+.card-header{
+    background-color: #A46E38;
+}
+.btn{
+    background-color: #A46E38;
+    border-color: #A46E38;
+}
+.card{
+    border-color: #A46E38;
+}
