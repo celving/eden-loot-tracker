@@ -40,10 +40,10 @@ $("#add-item").on("click", function(event) {
 
 database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
-
+    
+    var dateAcquired = childSnapshot.val().date;
     var playerName = childSnapshot.val().name;
     var itemName = childSnapshot.val().item;
-    var dateAcquired = childSnapshot.val().date;
     var isMain = childSnapshot.val().main;
 
     // Create the new row
